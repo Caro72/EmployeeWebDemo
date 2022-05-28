@@ -1,0 +1,14 @@
+﻿@model EmployeeMockupWebDemo.Entities.Empleados
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1>Datos del empleado</h1>
+<div>Nombre: @Model.Nombre</div>
+<div>Apellidos: @Model.Apellidos</div>
+<div>Cedula: @Model.Cedula</div>
+<div>Departamento: @Model.Departamento</div>
+<div> Correo: @Model.Correo</div>
+<div> Teledono: @Model.Telefono</div>
+<div>@Html.ActionLink("Regresar a inicio", "Index")</div>

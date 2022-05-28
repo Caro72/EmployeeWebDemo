@@ -1,0 +1,43 @@
+﻿
+@model EmployeeMockupWebDemo.VieModels.HomePageViewModel
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1>Bienvenidos al Taller</h1>
+<table style="margin-top:25px">
+    <tr>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Acciones</b></td>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Id</b></td>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Nombre</b></td>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Apellidos</b></td>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Cedula</b></td>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Departamento</b></td>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Correo</b></td>
+        <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>Telefono</b></td>
+    </tr>
+
+    @foreach (var Empleados in Model.Empleado)
+    {
+<tr>
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;">
+        <a href="~/Home/Details/@Empleados.Id">Ver</a> | <a href="~/Home/Edit/@Empleados.Id">Editar</a> | <a href="~/Home/Delete/@Empleados.Id">Eliminar</a>
+    </td>
+
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>@Empleados.Id</b></td>
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>@Empleados.Nombre</b></td>
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>@Empleados.Apellidos</b></td>
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>@Empleados.Cedula</b></td>
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>@Empleados.Departamento</b></td>
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>@Empleados.Correo</b></td>
+    <td style="margin: 10px; padding: 15px; border: 1px solid #808080;"> <b>@Empleados.Telefono</b></td>
+</tr>
+    }
+</table>
+<hr />
+<a href="~/Home/Create">Crear</a>
+<hr />
+@section footer {
+    <div><h3>Pagina desarrollada por Carolina</h3></div>
+}

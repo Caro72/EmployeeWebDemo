@@ -1,0 +1,43 @@
+﻿@using System.ComponentModel.DataAnnotations;
+@using EmployeeMockupWebDemo.Entities
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model Empleados
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" />
+        <span asp-validation-for="Nombre"></span>
+    </div>
+    <div>
+        <label asp-for="Apellidos"></label>
+
+        <input asp-for="Apellidos" />
+        <span asp-validation-for="Apellidos"></span>
+    </div>
+    <div>
+        <label asp-for="Cedula"></label>
+        <input asp-for="Cedula" />
+        <span asp-validation-for="Cedula"></span>
+    </div>
+    <div>
+        <label asp-for="Departamento"></label>
+        <select asp-for="Departamento" asp-items="@Html.GetEnumSelectList(typeof(Departamentos))"></select>
+        <span asp-validation-for="Departamento"></span>
+    </div>
+    <div>
+        <label asp-for="Correo"></label>
+        <input asp-for="Correo" />
+        <span asp-validation-for="Correo"></span>
+    </div>
+    <div>
+        <label asp-for="Telefono"></label>
+        <input asp-for="Telefono" />
+        <span asp-validation-for="Telefono"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Actualizar" />
+    </div>
+    <div>@Html.ActionLink("Regresar a inicio", "Index")</div>
+</form>
